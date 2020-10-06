@@ -2,7 +2,7 @@
 {% load static %}
 {% block content %}
 <hr><hr><hr>
-<div class="container pt-3 bg-info text-white">
+<div class="container pt-3 center bg-info text-white">
 	<form  method="POST" class='form-row'>
 		{% csrf_token %}
 
@@ -41,7 +41,7 @@
 			<br>
 			<div>
                 {{ form.media }}
-				{{ form.description | safe }}
+				{{ form.body | safe }}
 				<i class="fas fa-creative-commons-sampling"> 
 
 						اصل کار اینه. 
@@ -67,6 +67,9 @@
 </div>
 
 <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+
+<script type="text/javascript" src="{% static "ckeditor/ckeditor-init.js" %}"></script>
+<script type="text/javascript" src="{% static "ckeditor/ckeditor/ckeditor.js" %}"></script>
 
 
 {% endblock %}

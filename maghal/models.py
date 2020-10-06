@@ -39,6 +39,7 @@ class Post(models.Model):
     summary = models.CharField(max_length=300,blank=True,null=True,default='')
 
     body = RichTextUploadingField()
+   # body = models.TextField()
 
     links = models.URLField(blank=True,null=True)
 

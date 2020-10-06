@@ -5,21 +5,15 @@ from django.views import generic
 
 from django.shortcuts import render, get_object_or_404, get_list_or_404
 from django.shortcuts import redirect, render, reverse
-# Create your views here.
+#  your views here.
 
 class MaghalCreateView(generic.edit.CreateView):
-    model = Post
-    template_name = ''
-    queryset = Post.objects.all()
-
-  
- 
-
-   
-
+	form_class = MaghalCreateForm
+	template_name = 'maghal/create.html'
+	queryset = Post.objects.all()
+	
 	def form_valid(self, form):
-        return super().form_valid(form)
-
+		return super().form_valid(form)
 
 	def get_success_url(self):
 		return reverse('detail',kwargs={'name':self.object.name, 'number':self.object.number})
@@ -66,6 +60,7 @@ def update_view(request, id):
     context["form"] = form 
   
     return render(request, "maghal/update.html.html", context) 
+
 
 
 

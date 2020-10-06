@@ -14,8 +14,9 @@
     				<span class="card-text">{{ post.title }}</span>
     				<br>
     				<span class="card-text">{{ post.summary }}</span>
-    				  <a href="{% url 'language:lang_detail' lang.name 1 %}" class="btn btn-primary">amozeshe {{ post.name }} ?</a>
+    				  <a href="{% url 'maghal:detail' post.name 1 %}" class="btn btn-primary">amozeshe {{ post.name }} ?</a>
     			  </div> 
+                {% endfor %}
     			</div>
     		  </div>
     	  </div>
