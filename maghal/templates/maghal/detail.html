@@ -1,0 +1,22 @@
+{% extends './base.html' %}
+{% block content %}     
+ <div class="col-lg-8 col-md-10 mx-auto text-xl-left" style='color:#009688'>
+          <button class='btn btn-outline-warning'> ادیت </button>
+            <!--Title-->
+            <h2 class="card-title text-xl-left"><strong>{{ lang_post.title  }} --- <p id='lang_name'>{{lang_post.name}}</strong></h4>
+            <h4 class="blue-text"><strong>{{ lang_post.summary }}</strong></h5>
+
+            <p class="card-text text-md-left">
+             {{ lang_post.media }}
+             {{ lang_post.description | safe }}
+            </p>
+
+          </div>
+          <!--/.Card content-->
+					hi 
+        </div>
+        <hr>
+        <a href={{ lang_post.links }} class="text-decoration-none"><p class="font-weight-lighter"> {{ lang_post.links }}</p></a>
+</div>
+
+{% endblock %}
