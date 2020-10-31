@@ -1,37 +1,31 @@
-from django import forms 
+from django import forms
 from .models import Post
 from ckeditor_uploader.widgets import CKEditorUploadingWidget
 
+
 PRO_CHOICES = (
-		('HTML5', 'HTML'),
-		('Bootstrap4','Bootstrap4'),
-		('Css3','Css3'),
-		('Js','js'),
-		('Kotlin','Kotlin'),
-		('Java','java'),
-		('C++','C++'),
-		('Perl','Perl'),
-		('C-Sharp', 'C-Sharp'),
-		('Python', 'Python'),
-		('GraphQL', 'GraphQL'),
-		('REST', 'REST'),
-		('PostgreSQL', 'PostgreSQL'),
-		('MySQL', 'MySQL'),
-		('SQLServer','SQLServer'),
-		('linux', 'linux'),
-		('git','git'),
-		('docker', 'docker'), 
+		('Autoencoders', 'Deep Belief Net'),
+		('Deep Belief Net','Deep Belief Net'),
+		('Convolutional Neural Networks','Convolutional Neural Networks'),
+		('Recurrent Neural Networks','Recurrent Neural Networks'),
+		('Reinforcement Learning','Reinforcement Learning'),
+		('Natural language processing','Natural language processing'),
+		('Recommendation systems++','Recommendation systems'),
+		('Bioinformatics','Bioinformatics'),
+		('Mobile advertising', 'Mobile advertising'),
+		('Financial fraud detection', 'Financial fraud detection'),
 )
- 
+
+
 class MaghalCreateForm(forms.ModelForm):
 
 	number = forms.IntegerField()
-		
+
 	name = forms.ChoiceField(choices=PRO_CHOICES,widget=forms.Select(attrs={'class':'form-control '}))
-	
 
 
-	title =forms.CharField(required=True,max_length=100,widget=forms.TextInput(  
+
+	title =forms.CharField(required=True,max_length=100,widget=forms.TextInput(
 		attrs={
 			'class': 'form-control ',
 			'placeholder': 'تایتل',
@@ -57,4 +51,3 @@ class MaghalCreateForm(forms.ModelForm):
 	class Meta:
 		model = Post
 		fields ='__all__'
-
