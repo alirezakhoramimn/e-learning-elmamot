@@ -19,8 +19,7 @@ PRO_CHOICES = (
 
 class MaghalCreateForm(forms.ModelForm):
 
-	number = forms.IntegerField()
-
+	
 	name = forms.ChoiceField(choices=PRO_CHOICES,widget=forms.Select(attrs={'class':'form-control '}))
 
 

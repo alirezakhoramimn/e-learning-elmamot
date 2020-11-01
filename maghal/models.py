@@ -33,4 +33,4 @@ class Post(models.Model):
 
     def get_absolute_url(self):
 
-        return reverse("detail", args =[self.name,self.number])
+        return reverse("detail", args =[self.name,self.pk])
