@@ -16,7 +16,7 @@ class MaghalCreateView(generic.edit.CreateView):
 		return super().form_valid(form)
 
 	def get_success_url(self):
-		return reverse('detail',kwargs={'name':self.object.name, 'pk':self.object.pk})
+		return reverse('detail',kwargs={'name':self.object.name, 'id':self.object.id})
  
 
 
@@ -25,7 +25,7 @@ def create_view(request):
     form = MaghalCreateForm(request.POST or None) 
     if form.is_valid(): 
         form.save() 
-        reverse('detail',kwargs={'name':form.name, 'pk':form.pk})
+        reverse('detail',kwargs={'name':form.name, 'id':form.id})
 
     context = {
         'form' :form,   
@@ -34,8 +34,8 @@ def create_view(request):
     return render(request, "maghal/create.html", context) 
 
 
-def maghal_detail(request, name, pk):
-    post = get_object_or_404(Post, name=name ,pk=pk)
+def maghal_detail(request, name, id):
+    post = get_object_or_404(Post, name=name ,id=id)
 
     return render(request, 'maghal/detail.html', { "lang_post": post })
 
@@ -51,7 +51,7 @@ class MaghalListView(generic.ListView):
 # update view for details 
 def update_view(request, id): 
     context ={} 
-    obj = get_object_or_404(Post, name=name, pk=pk) 
+    obj = get_object_or_404(Post, name=name, id=id) 
     form = MaghalCreateForm(request.POST or None, instance = obj) 
     if form.is_valid(): 
         form.save() 
