@@ -8,10 +8,9 @@
     		  <div class="col mb-4">
     		  	{% for post in langs %}
     			<div class="card text-right">
-    			  <img src="470388.png" class="card-img-top" alt="...">
     			  <div class="card-body">
-    				<h5 class="card-title">{{ post.name }}</h5>
-    				<span class="card-text">{{ post.title }}</span>
+    				<h4 class="card-title deep-purple-text">{{ post.name }}</h5>
+    				<span class="card-text text-primary">{{ post.title }}</span>
     				<br>
     				<span class="card-text">{{ post.summary }}</span>
     				  <a href="{% url 'maghal:detail' post.name 1 %}" class="btn btn-primary">amozeshe {{ post.name }} ?</a>
