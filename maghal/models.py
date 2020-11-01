@@ -20,11 +20,7 @@ PRO_CHOICES = (
 )
 
 class Post(models.Model):
-    name = models.CharField(max_length=100, choices=PRO_CHOICES,default='HTML')
-
-
-    number = models.PositiveIntegerField(verbose_name='iin chandomie?',default=1)
-
+    name = models.CharField(max_length=100, choices=PRO_CHOICES,default='Autoencoders')
 
     title = models.CharField(max_length=100,default='')
 
